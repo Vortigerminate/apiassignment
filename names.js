@@ -11,8 +11,11 @@ window.onload = function () {
     fetchNameList();
     $('babyselect').observe('change', onNameSelected);
   };
-  
-  const API_BASE = "https://api.sheetbest.com/sheets/c1e0ead6-6df0-49f7-ace0-ec90562a8c3f";
+
+const corsProxy = "https://cors-anywhere.herokuapp.com/";
+const apiUrl = "https://api.sheetbest.com/sheets/c1e0ead6-6df0-49f7-ace0-ec90562a8c3f";
+
+const API_BASE = corsProxy + apiUrl;
   
   function fetchNameList() {
     new Ajax.Request(API_BASE, {
